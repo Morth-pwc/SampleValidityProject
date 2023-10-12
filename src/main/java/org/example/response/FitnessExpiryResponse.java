@@ -1,6 +1,6 @@
 package org.example.response;
 
-import org.example.FitnessExpiry;
+import org.example.entity.FitnessExpiry;
 
 import java.util.List;
 

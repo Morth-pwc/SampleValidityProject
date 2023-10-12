@@ -5,7 +5,6 @@ import jakarta.persistence.Id;
 import java.util.Date;
 
 public class FitnessExpiryRequest {
-    @Id
     private int id;
     private Date fitnessExpiryDate;
     private String vehicleType;

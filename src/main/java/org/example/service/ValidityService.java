@@ -1,6 +1,6 @@
 package org.example.service;
 
-import org.example.FitnessExpiry;
+import org.example.entity.FitnessExpiry;
 import org.example.RTOData;
 import org.example.repo.FitnessExpiryRepository;
 import org.example.response.FitnessExpiredVehiclesResponse;
@@ -25,6 +25,7 @@ public class ValidityService {
     }
 
     public FitnessExpiredVehiclesResponse getTopFitnessExpiryNew(Date startDate, Date endDate){
+        logger.info("Received request in Validity Service");
         List<RTOData> rtoDataList = new ArrayList<>(new ArrayList<>(fitnessExpiryRepository.findAllFitnessExpiry()));
 
         FitnessExpiredVehiclesResponse fitnessExpiredVehiclesResponse = new FitnessExpiredVehiclesResponse();
@@ -34,6 +35,7 @@ public class ValidityService {
     }
 
     public FitnessExpiryResponse getTopFitnessExpiry(Date startDate, Date endDate){
+        logger.info("Received request in Validity Service");
         List<FitnessExpiry> fitnessExpiryList = new ArrayList<FitnessExpiry>(new ArrayList<>(fitnessExpiryRepository.findAll()));
         List<FitnessExpiry> result = new ArrayList<FitnessExpiry>();
 
@@ -41,7 +43,6 @@ public class ValidityService {
 
             if(startDate.before(fitnessExpiry.getFitnessExpiryDate()) && endDate.after(fitnessExpiry.getFitnessExpiryDate())) {
                 result.add(fitnessExpiry);
-                //logger.info(fitnessExpiry.getFitnessExpiryDate().toString());
             }
         }
 
@@ -53,6 +54,7 @@ public class ValidityService {
     }
 
     public FitnessExpiryResponse getTopFitnessExpirySample(){
+        logger.info("Received request in Validity Service");
         List<FitnessExpiry> fitnessExpiryList = new ArrayList<FitnessExpiry>(new ArrayList<>(fitnessExpiryRepository.findAll()));
 
         FitnessExpiryResponse fitnessExpiryResponse = new FitnessExpiryResponse();
@@ -61,6 +63,7 @@ public class ValidityService {
     }
 
     public FitnessExpiryDummyResponse getTopFitnessExpiry(){
+        logger.info("Received request in Validity Service");
         List<RTOData> rtoDataList = new ArrayList<RTOData>();
         rtoDataList.add( new RTOData("UK15", 26));
         rtoDataList.add( new RTOData("MP12", 24));

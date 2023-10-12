@@ -1,6 +1,6 @@
 package org.example.repo;
 
-import org.example.FitnessExpiry;
+import org.example.entity.FitnessExpiry;
 import org.example.RTOData;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
